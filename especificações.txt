@@ -1,0 +1,22 @@
+Especificaçoes gerais:
+----------------------
+ - A e B podem estar ligadas diretamento ou indiretamente.
+
+    - A e B ligadas indiretamente, A recebe sinal em X milissegundos que é a
+    a soma de todas as ligacoes intermedias milissegundos.
+    - Se entre A e B ha varios caminhos, usamos apenas o caminho mais curto
+    (resolvido atraves de um algoritmo)
+
+    - A e B ligadas diretamente ambas 99G: B recebe um sinal de A em milissegundos
+    em que X = inverso da potencia de A
+    - A e B em que pelo menos uma é 98G ligadas diretamente: B recebe um sinal de
+    A em milissegundos em que Y = dobro do inverso da potencia de A
+    - A e B em que ambas 97G ligadas diretamente: B recebe um sinal de A em milissegundos
+    em que Y = quadruplo do inverso da potencia de A
+
+    - Uma estacao A 97G comunica com B, sse B e todas as outras estacoes forem 97G
+
+    - Relacoes diretas entre estacoes sao simetricas
+
+    - Cada estacao tem que ser declarada no ficheiro "stationsNetwork.txt" (declarada
+    apenas uma vez)
