@@ -84,7 +84,7 @@ def printPath(path):
 def DFS(graph, start, end, path, shortest):
     """
     Requires:
-    graph a Digraph;
+    graph a Digraph; 
     start and end nodes;
     path and shortest lists of nodes
     Ensures:
