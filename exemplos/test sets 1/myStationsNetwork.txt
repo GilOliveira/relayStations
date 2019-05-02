@@ -1,0 +1,6 @@
+#Id, Name,Power, Generation, Connected:
+1, Baki, 24, 99, (22, 34, 2, 5)
+2, Murai, 82, 98, (17, 13)
+3, Nanbuko, 17, 98, (24, 5)
+4, Sasume, 103, 97, (11)
+5, Sashimi, 76, 99, (5, 1)

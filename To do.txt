@@ -1,0 +1,9 @@
+Modulos:
+	- Leitura
+	- Escrita
+	- Comparar de redes (7G...)
+	- Calculadora de freq.
+	- Main
+	
+Classes:
+	
