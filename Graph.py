@@ -5,6 +5,7 @@
 
 from Digraph import Digraph
 from Edge import Edge
+from Digraph import Digraph
 
 class Graph(Digraph):
 

@@ -5,17 +5,26 @@
 
 from Node import Node
 from Edge import Edge
+from copy import deepcopy
+from Gra
 
 def readStations(stationsFile):
     file = open(stationsFile, 'r')
-    file.readline()  # Ignore first line
-    fileLen = len(file.readlines())
+    file2 = open(stationsFile, 'r')
+    file.readline() # Ignore first line
+    fileLen = len(file2.readlines())
 
     for i in range(fileLen-1):
         entry = file.readline().replace(', ', ',')\
-            .replace(' (', '').replace(')', '').split(",")
-        towerID = entry[0]
-        towerFreq = entry[1]
-        towerGen = entry[2]
-        connections = entry[3:]
-        currentNode = Node()
+            .replace('(', '').replace(')', '').replace('\n','').split(",")
+        towerID = int(entry[0])
+        towerName = entry[1]
+        towerPower = int(entry[2])
+        towerGen = int(entry[3])
+        connections = entry[4:]
+        currentNode = Node(towerID, towerName, towerPower, towerGen)
+        for j in connections:
+
+    file.close()
+    file2.close()
+

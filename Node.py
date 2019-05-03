@@ -38,7 +38,7 @@ class Node(object):
     def setPower(self, power):
         self._power = power
 
-    def setID(self, generation:
+    def setID(self, generation):
         self._generation = generation
 
     def __str__(self):
