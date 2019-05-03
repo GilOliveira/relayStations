@@ -10,6 +10,7 @@ from Graph import Graph
 
 def readStations(stationsFile):
     outGraph = Graph()
+    edgeList = []
     file = open(stationsFile, 'r')
     file2 = open(stationsFile, 'r')
     file.readline() # Ignore first line
@@ -23,9 +24,12 @@ def readStations(stationsFile):
         towerPower = int(entry[2])
         towerGen = int(entry[3])
         connections = entry[4:]
-        outGraph. Node(towerID, towerName, towerPower, towerGen)
+        outGraph.addNode(Node(towerID, towerName, towerPower, towerGen))
         for j in connections:
-
+            edgeList.append(Edge(towerID, int(j)))
+    for i in edgeList:
+        outGraph.addEdge(i)
     file.close()
     file2.close()
+    return(outGraph)
 

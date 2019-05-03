@@ -22,7 +22,7 @@ class Digraph(object):
         src = edge.getSource()
         dest = edge.getDestination()
         if not(src in self.nodes and dest in self.nodes):
-            raise ValueError('Node not in graph')
+           raise ValueError('Node not in graph')
         self.edges[src].append(dest)
     def childrenOf(self, node):
         return self.edges[node]

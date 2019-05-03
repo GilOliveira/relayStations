@@ -5,4 +5,4 @@ Este ficheiro serve só para eu fazer debug ao código que faço.
 
 from filesReading import *
 
-readStations('myStationsNetwork.txt')
+print(readStations('myStationsNetwork.txt'))
