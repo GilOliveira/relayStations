@@ -6,9 +6,10 @@
 from Node import Node
 from Edge import Edge
 from copy import deepcopy
-from Gra
+from Graph import Graph
 
 def readStations(stationsFile):
+    outGraph = Graph()
     file = open(stationsFile, 'r')
     file2 = open(stationsFile, 'r')
     file.readline() # Ignore first line
@@ -22,7 +23,7 @@ def readStations(stationsFile):
         towerPower = int(entry[2])
         towerGen = int(entry[3])
         connections = entry[4:]
-        currentNode = Node(towerID, towerName, towerPower, towerGen)
+        outGraph. Node(towerID, towerName, towerPower, towerGen)
         for j in connections:
 
     file.close()

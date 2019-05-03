@@ -8,7 +8,7 @@ from Edge import Edge
 
 class Digraph(object):
     #nodes is a list of the nodes in the graph
-    #edges is a dict mapping each nodfe to a list of its children
+    #edges is a dict mapping each node to a list of its children
     def __init__(self):
         self.nodes = []
         self.edges = {}
