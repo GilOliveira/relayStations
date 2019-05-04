@@ -28,6 +28,22 @@ class Digraph(object):
         return self.edges[node]
     def hasNode(self, node):
         return node in self.nodes
+
+    def getNodeList(self):
+        """
+        Ensures: A list of Node objects in the graph
+        """
+        return self.nodes
+
+    def getNodeByID(self, id):
+        """
+        Requires: The ID of a node in the graph
+        Ensures: A Node object with the specified ID
+        """
+        for i in self.getNodeList():
+            if i.getID() == id:
+                return i
+
     def __str__(self):
         result = ''
         for src in self.nodes:

@@ -2,7 +2,7 @@
 # Grupo 70
 # 49269 Mário Gil Oliveira
 # 53340 Francisco do Ó
-
+from Node import Node
 class Edge(object):
     def __init__(self, src, dest):
         """

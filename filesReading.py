@@ -16,19 +16,27 @@ def readStations(stationsFile):
     file.readline() # Ignore first line
     fileLen = len(file2.readlines())
 
+    entryCollection = []
     for i in range(fileLen-1):
         entry = file.readline().replace(', ', ',')\
             .replace('(', '').replace(')', '').replace('\n','').split(",")
+        entryCollection.append(entry)
+
+
+    for entry in entryCollection:
         towerID = int(entry[0])
         towerName = entry[1]
         towerPower = int(entry[2])
         towerGen = int(entry[3])
+        currentNode = Node(towerID, towerName, towerPower, towerGen)
+        outGraph.addNode(currentNode)
+
+    for entry in entryCollection:
+        currentNode = outGraph.getNodeByID(int(entry[0]))
         connections = entry[4:]
-        outGraph.addNode(Node(towerID, towerName, towerPower, towerGen))
-        for j in connections:
-            edgeList.append(Edge(towerID, int(j)))
-    for i in edgeList:
-        outGraph.addEdge(i)
+        for nodeID in connections:
+            outGraph.addEdge(Edge(currentNode, outGraph.getNodeByID(int(nodeID))))
+
     file.close()
     file2.close()
     return(outGraph)

@@ -9,6 +9,9 @@ from Digraph import Digraph
 
 class Graph(Digraph):
 
+    def __init__(self):
+        Digraph.__init__(self)
+
     def addEdge(self, edge):
         Digraph.addEdge(self, edge)
         rev = Edge(edge.getDestination(), edge.getSource())

@@ -42,4 +42,5 @@ class Node(object):
         self._generation = generation
 
     def __str__(self):
-        pass
+        return str(self.getID()) + " - " + str(self.getName()) + " - " + \
+               str(self.getPower()) + " - " + str(self.getGeneration())
