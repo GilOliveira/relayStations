@@ -44,6 +44,11 @@ class Digraph(object):
             if i.getID() == id:
                 return i
 
+    def getNodeByName(self, name):
+        for i in self.getNodeList():
+            if i.getName() == name:
+                return i
+
     def __str__(self):
         result = ''
         for src in self.nodes:
