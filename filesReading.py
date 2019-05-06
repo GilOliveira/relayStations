@@ -41,3 +41,18 @@ def readStations(stationsFile):
     file2.close()
     return(outGraph)
 
+def readRequests(requestsFile, graph):
+    outList = []
+    file = open(requestsFile, 'r')
+    file2 = open(requestsFile, 'r')
+    fileLen = len(file2.readlines())
+
+    for i in range(fileLen):
+        currentPair = file.readline().replace('\n','').split(' ')
+        nodePair = []
+        for i in currentPair:
+            nodePair.append(graph.getNodeByName(i))
+        nodePair = tuple(nodePair)
+        outList.append(nodePair)
+
+    return outList
