@@ -39,7 +39,7 @@ def readStations(stationsFile):
 
     file.close()
     file2.close()
-    return(outGraph)
+    return outGraph
 
 def readRequests(requestsFile, graph):
     outList = []

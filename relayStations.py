@@ -4,6 +4,11 @@
 # 53340 Francisco do Ó
 
 import sys
+from filesReading import *
 
+
+# ---- PROGRAM START ----
 stationNetwork, stationPairs, outputFile = sys.argv[1:]
 
+stationsGraph = readStations(stationNetwork)
+requestsList = readRequests(stationPairs, stationsGraph)
