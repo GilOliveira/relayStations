@@ -7,8 +7,11 @@ from Node import Node
 from Edge import Edge
 from copy import deepcopy
 from Graph import Graph
+from relayStations import *
 
 def readStations(stationsFile):
+    '''
+    '''
     outGraph = Graph()
     edgeList = []
     file = open(stationsFile, 'r')
@@ -42,6 +45,8 @@ def readStations(stationsFile):
     return outGraph
 
 def readRequests(requestsFile, graph):
+    '''
+    '''
     outList = []
     file = open(requestsFile, 'r')
     file2 = open(requestsFile, 'r')
@@ -57,6 +62,14 @@ def readRequests(requestsFile, graph):
 
     return outList
 
-def filesWriting(results):
-    
+def filesWriting(results, fileName):
+    '''
+    '''
+    createFile = open(fileName, 'w')
+    for i in results:
+        createFile.write(i)
+        createFile.write('\n')
+    createFile.close()
+
+
     

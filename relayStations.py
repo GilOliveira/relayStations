@@ -4,8 +4,13 @@
 # 53340 Francisco do Ó
 
 import sys
-from filesReading import *
+from files import *
 from pathCalculator import *
+from Node import Node
+from Edge import Edge
+from copy import deepcopy
+from Graph import Graph
+from relayStations import *
 
 
 # ---- PROGRAM START ----
@@ -15,3 +20,5 @@ stationsGraph = readStations(stationNetwork)
 requestsList = readRequests(stationPairs, stationsGraph)
 
 resultsList = runRequests(stationsGraph, requestsList)
+
+filesWriting(resultsList, outputFile)
