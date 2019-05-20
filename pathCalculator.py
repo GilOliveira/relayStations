@@ -54,3 +54,8 @@ def printPath(path):
         if i != len(path) - 1:
             result = result + '->'
     return result
+
+def runRequests(graph, requestsList):
+    resultsList = []
+    for request in requestsList:
+        resultsList.append(search(graph, request[0], request[1])[1])
