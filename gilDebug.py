@@ -11,8 +11,8 @@ from pathCalculator import *
 graph = readStations('grafoAvaliacao.txt')
 requests = readRequests('mytestSet.txt', graph)
 
-nodeA = graph.getNodeByName('Marcosi')
-nodeB = graph.getNodeByName('Saroka')
+nodeA = graph.getNodeByName('Davia')
+nodeB = graph.getNodeByName('Uige')
 
 
 # for i in requests:
