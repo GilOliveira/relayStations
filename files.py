@@ -56,3 +56,7 @@ def readRequests(requestsFile, graph):
         outList.append(nodePair)
 
     return outList
+
+def filesWriting(results):
+    
+    

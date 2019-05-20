@@ -9,7 +9,6 @@ from Graph import *
 from pathCalculator import *
 
 graph = readStations('grafoAvaliacao.txt')
-requests = readRequests('mytestSet.txt', graph)
 
 nodeA = graph.getNodeByName('Davia')
 nodeB = graph.getNodeByName('Uige')
