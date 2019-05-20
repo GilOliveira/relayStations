@@ -14,4 +14,4 @@ stationNetwork, stationPairs, outputFile = sys.argv[1:]
 stationsGraph = readStations(stationNetwork)
 requestsList = readRequests(stationPairs, stationsGraph)
 
-runRequests(stationsGraph, requestsList)
+resultsList = runRequests(stationsGraph, requestsList)
