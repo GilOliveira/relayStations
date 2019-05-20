@@ -3,7 +3,10 @@
 # 49269 Mário Gil Oliveira
 # 53340 Francisco do Ó
 
-def DFS(graph, start, end, path, shortest):
+from timeCalculator import timeCalculator
+from timeCalculator import checkCompatibility
+
+def DFS(graph, start, end, path, pathTime, shortestPath, shortestTime):
     """
     Requires:
     graph a Digraph;
@@ -14,15 +17,22 @@ def DFS(graph, start, end, path, shortest):
     """
     path = path + [start]
     print('Current DFS path:', printPath(path))
+    if len(path) > 1:
+        previousNode = path[-2]
+        pathTime = pathTime + timeCalculator(previousNode, start)
     if start == end:
-        return path
+        return path, pathTime
     for node in graph.childrenOf(start):
         if node not in path: #avoid cycles
-            if shortest == None or len(path) < len(shortest):
-                newPath = DFS(graph, node, end, path, shortest)
-                if newPath != None:
-                    shortest = newPath
-    return shortest
+            if (shortestPath is None or pathTime < shortestTime) \
+                    and checkCompatibility(start, node):
+                outTuple = DFS(graph, node, end, path, pathTime, shortestPath, shortestTime)
+                newPath = outTuple[0]
+                newTime = outTuple[1]
+                if newPath is not None:
+                    shortestPath = newPath
+                    shortestTime = newTime
+    return shortestPath, shortestTime
 
 def search(graph, start, end):
     """
@@ -32,4 +42,15 @@ def search(graph, start, end):
     Ensures:
     shortest path from start to end in graph
     """
-    return DFS(graph, start, end, [], None)
+    return DFS(graph, start, end, [], 0, None, 0)
+
+def printPath(path):
+    """
+    Requires: path a list of nodes
+    """
+    result = ''
+    for i in range(len(path)):
+        result = result + str(path[i])
+        if i != len(path) - 1:
+            result = result + '->'
+    return result
