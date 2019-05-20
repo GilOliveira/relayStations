@@ -42,8 +42,10 @@ def search(graph, start, end):
     Ensures:
     shortest path from start to end in graph
     """
-    return DFS(graph, start, end, [], 0, None, 0)
-
+    if checkCompatibility(start, end):
+        return DFS(graph, start, end, [], 0, None, 0)
+    else:
+        return None, start.getName() + ' and ' + end.getName() + ' do not communicate'
 def printPath(path):
     """
     Requires: path a list of nodes
@@ -59,3 +61,4 @@ def runRequests(graph, requestsList):
     resultsList = []
     for request in requestsList:
         resultsList.append(search(graph, request[0], request[1])[1])
+    return resultsList
