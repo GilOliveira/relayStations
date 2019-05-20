@@ -69,7 +69,7 @@ def filesWriting(results, fileName):
     '''
     createFile = open(fileName, 'w')
     for i in results:
-        createFile.write(i)
+        createFile.write(str(i))
         createFile.write('\n')
     createFile.close()
 
