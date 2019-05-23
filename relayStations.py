@@ -14,7 +14,7 @@ from copy import deepcopy
 from Graph import Graph
 
 
-# ---- PROGRAM START ----
+# ---- PROGRAM START ---- #
 
 # Import the files names for the list of stations, the connection requests
 # and the output file from the terminal

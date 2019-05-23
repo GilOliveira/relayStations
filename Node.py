@@ -32,15 +32,27 @@ class Node(object):
         return self._generation
 
     def setID(self, id):
+        """
+        Requires: id of the node
+        """
         self._id = id
 
     def setName(self, name):
+        """
+        Requires: name of the node
+        """
         self._name = name
 
     def setPower(self, power):
+        """
+        Requires: power of the node
+        """
         self._power = power
 
     def setID(self, generation):
+        """
+        Requires: type of generation of the node
+        """
         self._generation = generation
 
     def __str__(self):

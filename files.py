@@ -12,6 +12,9 @@ from Graph import Graph
 
 def readStations(stationsFile):
     '''
+    Reads stations from a txt file following the format specified in the project
+    Requires: stationsFiles
+    Ensures: digraph 
     '''
     outGraph = Graph()
     edgeList = []
@@ -25,7 +28,6 @@ def readStations(stationsFile):
         entry = file.readline().replace(', ', ',')\
             .replace('(', '').replace(')', '').replace('\n','').split(",")
         entryCollection.append(entry)
-
 
     for entry in entryCollection:
         towerID = int(entry[0])
@@ -47,6 +49,9 @@ def readStations(stationsFile):
 
 def readRequests(requestsFile, graph):
     '''
+    Reads requested stations from a txt file following the format specified in the project.
+    Requires: requestsFile and graph from the wanted stations.
+    Ensures: list with current stations pair
     '''
     outList = []
     file = open(requestsFile, 'r')
@@ -65,6 +70,11 @@ def readRequests(requestsFile, graph):
 
 def filesWriting(results, fileName):
     '''
+    Writes the results from the comparison between two stations
+        to an empty .txt file.
+    Requires: results from the comparison between the two stations
+        and fileName which gives a name to the .txt file.
+    Ensures: txt file with the results from the comparison.
     '''
     createFile = open(fileName, 'w')
     for i in results:

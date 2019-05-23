@@ -8,17 +8,23 @@
 from Node import Node
 
 def checkCompatibility(sender, receiver):
+    """
+    Checks if both sender and receiver station have the same generation.
+    Requires: sender station and receiver station.
+    """
     return not ((sender.getGeneration() == 97 and receiver.getGeneration() != 97) or
                 (sender.getGeneration() != 97 and receiver.getGeneration() == 97))
+                #since stations from the 97th generation can only comunicate with a 97th generation station.
 
-def timeCalculator(sender, reciever):
+def timeCalculator(sender, receiver):
     """
-    Docstring
+    Adds the times between the sender and the receiver nodes.
+    Requires: sender station and receiver station
     """
-    if sender.getGeneration() == 99 and reciever.getGeneration() == 99:
+    if sender.getGeneration() == 99 and receiver.getGeneration() == 99:
         return sender.getPower()**(-1)
-    elif (sender.getGeneration() == 98 or reciever.getGeneration() == 98) and\
-        sender.getGeneration != 97 and reciever.getGeneration() != 97:
+    elif (sender.getGeneration() == 98 or receiver.getGeneration() == 98) and\
+        sender.getGeneration != 97 and receiver.getGeneration() != 97:
         return 2 * sender.getPower()**(-1)
     else:
         return 4 * sender.getPower()**(-1)

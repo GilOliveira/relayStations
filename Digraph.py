@@ -8,15 +8,21 @@
 from Node import Node
 from Edge import Edge
 
-class Digraph(object):
-    #nodes is a list of the nodes in the graph
-    #edges is a dict mapping each node to a list of its children
 
+class Digraph(object):
+    """
+    Creates a digraph
+    """
+    
     def __init__(self):
-        self.nodes = []
-        self.edges = {}
+        self.nodes = []     #nodes is a list of the nodes in the graph
+        self.edges = {}      #edges is a dict mapping each node to a list of its children
 
     def addNode(self, node):
+        """
+        Adds node to digraph
+        Requires: node
+        """
         if node in self.nodes:
             raise ValueError('Duplicate node')
         else:
@@ -24,6 +30,10 @@ class Digraph(object):
             self.edges[node] = []
 
     def addEdge(self, edge):
+        """
+        Adds edge to diagraph
+        Requires: edge
+        """
         src = edge.getSource()
         dest = edge.getDestination()
         if not(src in self.nodes and dest in self.nodes):
@@ -53,6 +63,10 @@ class Digraph(object):
                 return i
 
     def getNodeByName(self, name):
+        """
+        Requires: name
+        Ensures: name of the node
+        """
         for i in self.getNodeList():
             if i.getName() == name:
                 return i

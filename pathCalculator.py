@@ -60,6 +60,10 @@ def printPath(path):
     return result
 
 def runRequests(graph, requestsList):
+    """
+    Requires: requestList
+    Ensures: list of results regarding the requests
+    """
     resultsList = []
     for request in requestsList:
         if type(request[0]) is str:
