@@ -62,14 +62,10 @@ def printPath(path):
 def runRequests(graph, requestsList):
     resultsList = []
     for request in requestsList:
-        print(request[0])
-        type(request[0])
-        print(request[1])
         if type(request[0]) is str:
             resultsList.append(request[0] + ' out of the network')
         elif type(request[1]) is str:
             resultsList.append(request[1] + ' out of the network')
         else:
-            print(request)
             resultsList.append(search(graph, request[0], request[1])[1])
     return resultsList
