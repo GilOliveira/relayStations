@@ -9,7 +9,6 @@ from Node import Node
 from Edge import Edge
 from copy import deepcopy
 from Graph import Graph
-from relayStations import *
 
 def readStations(stationsFile):
     '''
@@ -72,6 +71,3 @@ def filesWriting(results, fileName):
         createFile.write(str(i))
         createFile.write('\n')
     createFile.close()
-
-
-    
