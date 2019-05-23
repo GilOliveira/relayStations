@@ -18,7 +18,6 @@ def DFS(graph, start, end, path, pathTime, shortestPath, shortestTime):
     a shortest path from start to end in graph
     """
     path = path + [start]
-    print('Current DFS path:', printPath(path))
     if len(path) > 1:
         previousNode = path[-2]
         pathTime = pathTime + timeCalculator(previousNode, start)
