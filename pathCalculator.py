@@ -47,6 +47,7 @@ def search(graph, start, end):
         return DFS(graph, start, end, [], 0, None, 0)
     else:
         return None, start.getName() + ' and ' + end.getName() + ' do not communicate'
+
 def printPath(path):
     """
     Requires: path a list of nodes
@@ -61,5 +62,14 @@ def printPath(path):
 def runRequests(graph, requestsList):
     resultsList = []
     for request in requestsList:
-        resultsList.append(search(graph, request[0], request[1])[1])
+        print(request[0])
+        type(request[0])
+        print(request[1])
+        if type(request[0]) is str:
+            resultsList.append(request[0] + ' out of the network')
+        elif type(request[1]) is str:
+            resultsList.append(request[1] + ' out of the network')
+        else:
+            print(request)
+            resultsList.append(search(graph, request[0], request[1])[1])
     return resultsList
