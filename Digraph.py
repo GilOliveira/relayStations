@@ -15,6 +15,10 @@ class Digraph(object):
     """
     
     def __init__(self):
+        """
+        Initiates an object of the Digraph class.
+        Starts with an empty nodes list and an empty edges dict.
+        """
         self._nodes = []     #nodes is a list of the nodes in the graph
         self._edges = {}      #edges is a dict mapping each node to a list of its children
 
