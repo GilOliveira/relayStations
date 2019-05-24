@@ -14,7 +14,7 @@ def checkCompatibility(sender, receiver):
     """
     return not ((sender.getGeneration() == 97 and receiver.getGeneration() != 97) or
                 (sender.getGeneration() != 97 and receiver.getGeneration() == 97))
-                #since stations from the 97th generation can only comunicate with a 97th generation station.
+                #since stations from the 97th generation can only communicate with a 97th generation station.
 
 def timeCalculator(sender, receiver):
     """

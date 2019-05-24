@@ -21,8 +21,8 @@ class Graph(Digraph):
 
     def addEdge(self, edge):
         """
-        Adds an edge to the diagraph. 
-        Every edge added to the diagraph is added with another reversed edge
+        Adds an edge to the digraph.
+        Every edge added to the digraph is added with another reversed edge
         Requires: edge to be added 
         """
         Digraph.addEdge(self, edge)
