@@ -81,6 +81,7 @@ class Digraph(object):
         else:
             return name
 
+
     def __str__(self):
         """
         Ensures: The Nodes and Edges of the Graph.

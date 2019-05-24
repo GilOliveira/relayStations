@@ -64,6 +64,32 @@ class Node(object):
         """
         self._generation = generation
 
+    def __eq__(self, other):
+        """
+        Overrides the '==' operator.
+        Requires: other is Node
+        Ensures: True if both nodes have the same ID, False otherwise
+                (as bool)
+        """
+
+        if self.getID() == other.getID():
+            return True
+        else:
+            return False
+
+    def __lt__(self, other):
+        """
+        Overrides the '<' and '>' operators
+        Requires: other is Node
+        Ensures: True if self has a smaller ID, False otherwise
+                (as bool)
+        """
+
+        if self.getID() < other.getID():
+            return True
+        else:
+            return False
+
     def __str__(self):
         """
         Makes the string output with the attributes of the node.
