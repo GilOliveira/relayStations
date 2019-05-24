@@ -15,19 +15,19 @@ class Digraph(object):
     """
     
     def __init__(self):
-        self.nodes = []     #nodes is a list of the nodes in the graph
-        self.edges = {}      #edges is a dict mapping each node to a list of its children
+        self._nodes = []     #nodes is a list of the nodes in the graph
+        self._edges = {}      #edges is a dict mapping each node to a list of its children
 
     def addNode(self, node):
         """
         Adds node to digraph
         Requires: node
         """
-        if node in self.nodes:
+        if node in self._nodes:
             raise ValueError('Duplicate node')
         else:
-            self.nodes.append(node)
-            self.edges[node] = []
+            self._nodes.append(node)
+            self._edges[node] = []
 
     def addEdge(self, edge):
         """
@@ -36,22 +36,22 @@ class Digraph(object):
         """
         src = edge.getSource()
         dest = edge.getDestination()
-        if not(src in self.nodes and dest in self.nodes):
+        if not(src in self._nodes and dest in self._nodes):
            raise ValueError('Node not in graph')
-        if dest not in self.edges[src]:
-            self.edges[src].append(dest)
+        if dest not in self._edges[src]:
+            self._edges[src].append(dest)
 
     def childrenOf(self, node):
-        return self.edges[node]
+        return self._edges[node]
 
     def hasNode(self, node):
-        return node in self.nodes
+        return node in self._nodes
 
     def getNodeList(self):
         """
         Ensures: A list of Node objects in the graph
         """
-        return self.nodes
+        return self._nodes
 
     def getNodeByID(self, id):
         """
@@ -75,8 +75,8 @@ class Digraph(object):
 
     def __str__(self):
         result = ''
-        for src in self.nodes:
-            for dest in self.edges[src]:
+        for src in self._nodes:
+            for dest in self._edges[src]:
                 result = result + src.getName() + '->'\
                 + dest.getName() + '\n'
         return result
