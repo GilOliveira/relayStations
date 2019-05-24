@@ -31,7 +31,7 @@ class Digraph(object):
 
     def addEdge(self, edge):
         """
-        Adds edge to diagraph
+        Adds edge to digraph
         Requires: edge
         """
         src = edge.getSource()
@@ -42,9 +42,17 @@ class Digraph(object):
             self._edges[src].append(dest)
 
     def childrenOf(self, node):
+        """
+        Requires: node (Node)
+        Ensures: Children nodes of the inputed Node (as List)
+        """
         return self._edges[node]
 
     def hasNode(self, node):
+        """
+        Requires: Node (as Node)
+        Ensures: True if the node is in the graph, False otherwise (as Bool).
+        """
         return node in self._nodes
 
     def getNodeList(self):
@@ -74,6 +82,9 @@ class Digraph(object):
             return name
 
     def __str__(self):
+        """
+        Ensures: The Nodes and Edges of the Graph.
+        """
         result = ''
         for src in self._nodes:
             for dest in self._edges[src]:

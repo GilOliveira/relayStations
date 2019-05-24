@@ -20,12 +20,21 @@ class Node(object):
         self._generation = generation
 
     def getID(self):
+        """
+        Ensures: the station ID (int)
+        """
         return self._id
 
     def getName(self):
+        """
+        Ensures: the station name (str)
+        """
         return self._name
 
     def getPower(self):
+        """
+        Ensures: the the station power (int)
+        """
         return self._power
 
     def getGeneration(self):
@@ -56,5 +65,8 @@ class Node(object):
         self._generation = generation
 
     def __str__(self):
+        """
+        Makes the string output with the attributes of the node.
+        """
         return str(self.getID()) + " - " + str(self.getName()) + " - " + \
                str(self.getPower()) + " - " + str(self.getGeneration())

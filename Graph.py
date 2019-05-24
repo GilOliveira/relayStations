@@ -14,6 +14,9 @@ class Graph(Digraph):
     Creates Digraph
     """
     def __init__(self):
+        """
+        Initializes a Graph object, a subclass of Digraph
+        """
         Digraph.__init__(self)
 
     def addEdge(self, edge):
